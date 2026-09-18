@@ -1,0 +1,448 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport"
+          content="width=device-width, initial-scale=1.0">
+
+    <title>GeoMind AI</title>
+
+
+    <!-- ================= BOOTSTRAP ================= -->
+
+    <link
+            href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css"
+            rel="stylesheet">
+
+
+    <!-- ================= BOOTSTRAP ICONS ================= -->
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- ================= GOOGLE FONT ================= -->
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+
+
+    <!-- ================= PROJECT CSS ================= -->
+
+    <link
+            rel="stylesheet"
+            href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app-container">
+
+
+    <!-- ================================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================================= -->
+
+    <aside class="sidebar">
+
+
+        <!-- ================= BRAND ================= -->
+
+        <div class="brand">
+
+            <div class="brand-icon">
+
+                <i class="bi bi-globe-americas"></i>
+
+            </div>
+
+
+            <div>
+
+                <h5>
+                    GeoMind
+                </h5>
+
+                <span>
+                    Geoscience AI
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= NEW CHAT ================= -->
+
+        <div class="new-chat">
+
+            <button
+                    type="button"
+                    onclick="newChat()">
+
+                <i class="bi bi-plus-lg"></i>
+
+                New Chat
+
+            </button>
+
+        </div>
+
+
+        <!-- ================= NAVIGATION ================= -->
+
+        <nav class="sidebar-nav">
+
+
+            <!-- AI ASSISTANT -->
+
+            <a
+                    href="index.html"
+                    class="nav-item active">
+
+                <i class="bi bi-chat-left-text"></i>
+
+                <span>
+                    AI Assistant
+                </span>
+
+            </a>
+
+
+            <!-- DOCUMENTS -->
+
+            <a
+                    href="documents.html"
+                    class="nav-item">
+
+                <i class="bi bi-file-earmark-text"></i>
+
+                <span>
+                    Documents
+                </span>
+
+            </a>
+
+
+            <!-- CHAT HISTORY -->
+
+            <a
+                    href="history.html"
+                    class="nav-item">
+
+                <i class="bi bi-clock-history"></i>
+
+                <span>
+                    Chat History
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- ================================================= -->
+        <!-- SIDEBAR BOTTOM -->
+        <!-- ================================================= -->
+
+        <div class="sidebar-bottom">
+
+
+            <!-- SYSTEM STATUS -->
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+
+                <div>
+
+                    <small>
+                        System Status
+                    </small>
+
+                    <strong>
+                        Ready
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="profile">
+
+
+                <div class="profile-avatar">
+                    S
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Student
+                    </strong>
+
+                    <small>
+                        Geoscience Researcher
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================================================= -->
+        <!-- TOP BAR -->
+        <!-- ================================================= -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <h4>
+                    Geoscience AI Assistant
+                </h4>
+
+
+                <p>
+                    Explore geological knowledge with
+                    AI-powered research assistance
+                </p>
+
+            </div>
+
+
+            <!-- SETTINGS -->
+
+            <button
+                    class="icon-button"
+                    type="button"
+                    title="Settings">
+
+                <i class="bi bi-gear"></i>
+
+            </button>
+
+        </header>
+
+
+        <!-- ================================================= -->
+        <!-- CHAT AREA -->
+        <!-- ================================================= -->
+
+        <section class="chat-area">
+
+
+            <!-- ================================================= -->
+            <!-- WELCOME -->
+            <!-- ================================================= -->
+
+            <div
+                    class="welcome-section"
+                    id="welcomeSection">
+
+
+                <div class="welcome-icon">
+
+                    <i class="bi bi-stars"></i>
+
+                </div>
+
+
+                <h1>
+                    What do you want to explore?
+                </h1>
+
+
+                <p>
+                    Ask questions about geology, minerals,
+                    rocks, earth sciences and geological research.
+                </p>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- SUGGESTIONS -->
+            <!-- ================================================= -->
+
+            <div
+                    class="suggestions"
+                    id="suggestions">
+
+
+                <!-- ROCKS -->
+
+                <button
+                        type="button"
+                        onclick="useQuestion(this)">
+
+                    <i class="bi bi-layers"></i>
+
+
+                    <span>
+                        What are the different types of rocks?
+                    </span>
+
+                </button>
+
+
+                <!-- MINERALS -->
+
+                <button
+                        type="button"
+                        onclick="useQuestion(this)">
+
+                    <i class="bi bi-gem"></i>
+
+
+                    <span>
+                        How are minerals formed?
+                    </span>
+
+                </button>
+
+
+                <!-- PLATE TECTONICS -->
+
+                <button
+                        type="button"
+                        onclick="useQuestion(this)">
+
+                    <i class="bi bi-globe2"></i>
+
+
+                    <span>
+                        Explain plate tectonics.
+                    </span>
+
+                </button>
+
+
+                <!-- GROUNDWATER -->
+
+                <button
+                        type="button"
+                        onclick="useQuestion(this)">
+
+                    <i class="bi bi-water"></i>
+
+
+                    <span>
+                        What causes groundwater movement?
+                    </span>
+
+                </button>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- CHAT MESSAGES -->
+            <!-- ================================================= -->
+
+            <div
+                    id="chatMessages"
+                    class="chat-messages">
+
+            </div>
+
+        </section>
+
+
+        <!-- ================================================= -->
+        <!-- INPUT SECTION -->
+        <!-- ================================================= -->
+
+        <div class="input-section">
+
+
+            <div class="input-wrapper">
+
+
+                <!-- ATTACHMENT -->
+
+                <button
+                        type="button"
+                        class="attach-button"
+                        title="Upload document">
+
+                    <i class="bi bi-paperclip"></i>
+
+                </button>
+
+
+                <!-- QUESTION -->
+
+                <textarea
+                        id="questionInput"
+                        rows="1"
+                        placeholder="Ask a geoscience question..."
+                        oninput="autoResize(this)"
+                        onkeydown="handleEnter(event)">
+                </textarea>
+
+
+                <!-- SEND -->
+
+                <button
+                        type="button"
+                        class="send-button"
+                        onclick="sendQuestion()"
+                        title="Ask AI">
+
+                    <i class="bi bi-arrow-up"></i>
+
+                </button>
+
+            </div>
+
+
+            <p class="input-note">
+
+                GeoMind AI uses your knowledge base
+                to generate grounded responses.
+
+            </p>
+
+        </div>
+
+    </main>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- JAVASCRIPT -->
+<!-- ================================================= -->
+
+<script src="script.js"></script>
+
+
+</body>
+
+</html>

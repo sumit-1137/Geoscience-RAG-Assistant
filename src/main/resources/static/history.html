@@ -1,0 +1,370 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+            name="viewport"
+            content="width=device-width, initial-scale=1.0">
+
+
+    <title>
+        Chat History | GeoMind AI
+    </title>
+
+
+    <!-- ================= FONT AWESOME ================= -->
+
+    <link
+            rel="stylesheet"
+            href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css">
+
+
+    <!-- ================= BOOTSTRAP ICONS ================= -->
+
+    <link
+            rel="stylesheet"
+            href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+
+    <!-- ================= GOOGLE FONT ================= -->
+
+    <link
+            href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&display=swap"
+            rel="stylesheet">
+
+
+    <!-- ================= PROJECT CSS ================= -->
+
+    <link
+            rel="stylesheet"
+            href="style.css">
+
+</head>
+
+
+<body>
+
+
+<div class="app-container">
+
+
+    <!-- ================================================= -->
+    <!-- SIDEBAR -->
+    <!-- ================================================= -->
+
+    <aside class="sidebar">
+
+
+        <!-- ================= BRAND ================= -->
+
+        <div class="brand">
+
+
+            <div class="brand-icon">
+
+                <i class="fa-solid fa-earth-americas"></i>
+
+            </div>
+
+
+            <div>
+
+                <h5>
+                    GeoMind
+                </h5>
+
+                <span>
+                    Geoscience AI
+                </span>
+
+            </div>
+
+        </div>
+
+
+        <!-- ================= NEW CHAT ================= -->
+
+        <div class="new-chat">
+
+            <button
+                    type="button"
+                    onclick="window.location.href='index.html'">
+
+                <i class="fa-solid fa-plus"></i>
+
+                New Chat
+
+            </button>
+
+        </div>
+
+
+        <!-- ================================================= -->
+        <!-- NAVIGATION -->
+        <!-- ================================================= -->
+
+        <nav class="sidebar-nav">
+
+
+            <!-- AI ASSISTANT -->
+
+            <a
+                    href="index.html"
+                    class="nav-item">
+
+                <i class="fa-regular fa-message"></i>
+
+                <span>
+                    AI Assistant
+                </span>
+
+            </a>
+
+
+            <!-- DOCUMENTS -->
+
+            <a
+                    href="documents.html"
+                    class="nav-item">
+
+                <i class="fa-regular fa-file-lines"></i>
+
+                <span>
+                    Documents
+                </span>
+
+            </a>
+
+
+            <!-- CHAT HISTORY -->
+
+            <a
+                    href="history.html"
+                    class="nav-item active">
+
+                <i class="fa-solid fa-clock-rotate-left"></i>
+
+                <span>
+                    Chat History
+                </span>
+
+            </a>
+
+        </nav>
+
+
+        <!-- ================================================= -->
+        <!-- SIDEBAR BOTTOM -->
+        <!-- ================================================= -->
+
+        <div class="sidebar-bottom">
+
+
+            <!-- SYSTEM STATUS -->
+
+            <div class="system-status">
+
+                <span class="status-dot"></span>
+
+
+                <div>
+
+                    <small>
+                        System Status
+                    </small>
+
+                    <strong>
+                        Ready
+                    </strong>
+
+                </div>
+
+            </div>
+
+
+            <!-- PROFILE -->
+
+            <div class="profile">
+
+
+                <div class="profile-avatar">
+                    S
+                </div>
+
+
+                <div>
+
+                    <strong>
+                        Student
+                    </strong>
+
+                    <small>
+                        Geoscience Researcher
+                    </small>
+
+                </div>
+
+            </div>
+
+        </div>
+
+    </aside>
+
+
+    <!-- ================================================= -->
+    <!-- MAIN CONTENT -->
+    <!-- ================================================= -->
+
+    <main class="main-content">
+
+
+        <!-- ================================================= -->
+        <!-- TOP BAR -->
+        <!-- ================================================= -->
+
+        <header class="topbar">
+
+
+            <div>
+
+                <h4>
+                    Chat History
+                </h4>
+
+
+                <p>
+                    View your previous GeoMind AI conversations
+                </p>
+
+            </div>
+
+
+            <!-- SETTINGS -->
+
+            <button
+                    class="icon-button"
+                    type="button"
+                    title="Settings">
+
+                <i class="bi bi-gear"></i>
+
+            </button>
+
+        </header>
+
+
+        <!-- ================================================= -->
+        <!-- HISTORY PAGE -->
+        <!-- ================================================= -->
+
+        <section class="history-page">
+
+
+            <!-- ================================================= -->
+            <!-- HISTORY HEADER -->
+            <!-- ================================================= -->
+
+            <div class="history-top">
+
+
+                <div>
+
+                    <h2>
+                        Previous Conversations
+                    </h2>
+
+
+                    <p id="conversationCount">
+                        0 conversations
+                    </p>
+
+                </div>
+
+
+                <!-- CLEAR HISTORY -->
+
+                <button
+                        id="clearHistoryBtn"
+                        type="button"
+                        class="clear-history-btn">
+
+                    <i class="fa-regular fa-trash-can"></i>
+
+                    Clear History
+
+                </button>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- EMPTY STATE -->
+            <!-- ================================================= -->
+
+            <div
+                    id="emptyState"
+                    class="empty-state">
+
+
+                <div class="empty-icon">
+
+                    <i class="fa-regular fa-clock"></i>
+
+                </div>
+
+
+                <h2>
+                    No chat history yet
+                </h2>
+
+
+                <p>
+                    Ask a question in GeoMind AI
+                    to create your first conversation.
+                </p>
+
+
+                <button
+                        type="button"
+                        class="start-chat-btn"
+                        onclick="window.location.href='index.html'">
+
+                    <i class="fa-solid fa-plus"></i>
+
+                    Start New Chat
+
+                </button>
+
+            </div>
+
+
+            <!-- ================================================= -->
+            <!-- HISTORY LIST -->
+            <!-- ================================================= -->
+
+            <div
+                    id="historyList"
+                    class="history-list">
+
+            </div>
+
+        </section>
+
+    </main>
+
+</div>
+
+
+<!-- ================================================= -->
+<!-- HISTORY JAVASCRIPT -->
+<!-- ================================================= -->
+
+<script src="history.js"></script>
+
+
+</body>
+
+</html>
